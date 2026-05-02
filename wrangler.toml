@@ -1,0 +1,59 @@
+name = "coalition-gateway"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+account_id = "04c59c95ce8d0a0be98099b7f7e39d18"
+
+routes = [
+  { pattern = "api.genesisconductor.io/v2/*", zone_name = "genesisconductor.io" }
+]
+
+[vars]
+ENVIRONMENT = "production"
+
+[[services]]
+binding = "GUARDRAILS"
+service = "coalition-guardrails-governance"
+
+[[services]]
+binding = "CODEGEN"
+service = "coalition-safe-codegen"
+
+[[services]]
+binding = "DOCOPS"
+service = "coalition-docops-rag"
+
+[[services]]
+binding = "OBSERVABILITY"
+service = "coalition-observability-roi"
+
+[[services]]
+binding = "DIAMOND_VAULT"
+service = "coalition-diamond-vault"
+
+[[services]]
+binding = "INTEL_RAG"
+service = "coalition-intel-rag"
+
+[[services]]
+binding = "LIVE_OPS"
+service = "coalition-live-ops-assistant"
+
+[[services]]
+binding = "CREATIVE"
+service = "coalition-creative-studio"
+
+[[services]]
+binding = "ARBITER"
+service = "arbiter-scheduler"
+
+[[kv_namespaces]]
+binding = "ENTITLEMENTS_KV"
+id = "41d022bf99e24b1889813b5aba3775b0"
+
+[[d1_databases]]
+binding = "TRACE_LEDGER"
+database_name = "genesis-trace-ledger"
+database_id = "86e008c4-f71f-41f9-b629-b9542a38d466"
+
+[triggers]
+crons = ["*/17 * * * *"]
