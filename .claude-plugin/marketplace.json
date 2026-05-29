@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "coalition-gateway",
+  "owner": {
+    "name": "Genesis Conductor Engine (Igor Holt @invariantx)",
+    "url": "https://github.com/Genesis-Conductor-Engine"
+  },
+  "description": "Coalition Gateway: 9-plugin x402 entrypoint + UCP catalog + Trace-as-Consent patterns. Advanced agentic gateway component in the Genesis Conductor Engine ecosystem for secure multi-party orchestration and x402-paid tool surfaces by @invariantx.",
+  "version": "1.0.0",
+  "homepage": "https://github.com/Genesis-Conductor-Engine/coalition-gateway",
+  "keywords": [
+    "genesis-conductor",
+    "invariantx",
+    "coalition-gateway",
+    "x402-entrypoint",
+    "ucp-catalog",
+    "trace-as-consent",
+    "multi-party-orchestration",
+    "openclaw-ecosystem"
+  ],
+  "plugins": [
+    {
+      "name": "coalition-gateway",
+      "source": "https://github.com/Genesis-Conductor-Engine/coalition-gateway",
+      "description": "9-plugin x402 entrypoint with UCP catalog and Trace-as-Consent support. Enables secure coalition-style agent interactions and paid tool gateways within Genesis Conductor topological workflows. Integrates cleanly with mcp-openclaw-bridge and smithery-mcp-orchestrator from the primary @invariantx OpenClaw skills bundle.",
+      "version": "1.0.0",
+      "tags": ["x402", "gateway", "coalition", "genesis-conductor"],
+      "category": "orchestration",
+      "homepage": "https://github.com/Genesis-Conductor-Engine/coalition-gateway",
+      "keywords": ["coalition gateway x402", "ucp catalog trace consent", "agentic multi-party"]
+    }
+  ],
+  "links": {
+    "github": "https://github.com/Genesis-Conductor-Engine/coalition-gateway",
+    "main-marketplace": "https://github.com/igor-holt/openclaw-skills",
+    "x": "https://x.com/invariantx"
+  }
+}
