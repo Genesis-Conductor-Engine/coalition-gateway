@@ -778,6 +778,12 @@ var src_default = {
     if (path === "/" || path === "") {
       ctx.waitUntil(logTraceEvent(env, request, "view", "notice", "io.genesisconductor.apex_view", { path }));
     }
+    if (path === "/telemetry/health" || path === "/telemetry/health/") {
+      if (env.TELEMETRY_API) {
+        return env.TELEMETRY_API.fetch(new Request("https://genesis-telemetry-api.iholt.workers.dev/health", { method: request.method, headers: request.headers }));
+      }
+      return fetch("https://genesis-telemetry-api.iholt.workers.dev/health", { method: request.method, headers: { "Content-Type": "application/json" } });
+    }
     if (path === "/health" || path === "/health/") return aggregatedHealth(env);
     const healthRoutes = { "/health/guardrails": "GUARDRAILS", "/health/codegen": "CODEGEN", "/health/rag": "DOCOPS", "/health/observability": "OBSERVABILITY", "/health/diamond-vault": "DIAMOND_VAULT", "/health/intel-rag": "INTEL_RAG", "/health/live-ops": "LIVE_OPS", "/health/creative": "CREATIVE", "/health/arbiter": "ARBITER" };
     if (healthRoutes[path]) return env[healthRoutes[path]].fetch(request);
