@@ -48,6 +48,11 @@ service = "coalition-creative-studio"
 binding = "ARBITER"
 service = "arbiter-scheduler"
 
+# Telemetry API — proxies /telemetry/* on api.genesisconductor.io to genesis-telemetry-api Worker
+[[services]]
+binding = "TELEMETRY_API"
+service = "genesis-telemetry-api"
+
 [[kv_namespaces]]
 binding = "ENTITLEMENTS_KV"
 id = "41d022bf99e24b1889813b5aba3775b0"
